@@ -25,7 +25,7 @@ The CSS was built in SCSS, divided by page sector for a clean stylesheet.
 
 ![search result](https://github.com/vitorhfs/IP-address-tracker/blob/main/src/images/screenshot%20(2).jpg?raw=true)
 
-You can see the challenge [here] (https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0).
+You can see the challenge here: https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0.
 
 This website shows you the exact location of your server and your IP address the moment you access it, the search will respond you with the same informations of any existent IP address or domain name, if your search is wrong the page will send you an alert.
 
