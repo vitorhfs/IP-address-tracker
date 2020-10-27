@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+body {
+  text-align: center;
+  font-size: 400;
+  height: 100vh;
+  font-family: 'Rubik', sans-serif;
+  color: #fff;
+  margin: 0;
+}
+
+.main-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+}
+
+.search {
+  background: url("../images/pattern-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 280px;
+  z-index: 100;
+  -webkit-box-shadow: 0px -15px 20px #C4C4C4;
+          box-shadow: 0px -15px 20px #C4C4C4;
+}
+
+.search h1 {
+  margin-top: 36px;
+  margin-bottom: 32px;
+  line-height: 18px;
+}
+
+.search input {
+  width: 500px;
+  height: 100%;
+  border-radius: 18px 0 0 18px;
+  border: none;
+  padding: 0 25px;
+}
+
+@media (max-width: 880px) {
+  .search input {
+    width: 220px;
+    height: 55px;
+  }
+}
+
+@media (max-width: 330px) {
+  .search input {
+    width: auto;
+    padding: 0 10px;
+  }
+}
+
+.search input::-webkit-input-placeholder {
+  margin: auto;
+}
+
+.search input:-ms-input-placeholder {
+  margin: auto;
+}
+
+.search input::-ms-input-placeholder {
+  margin: auto;
+}
+
+.search input::placeholder {
+  margin: auto;
+}
+
+.search button {
+  padding: 0;
+  border: none;
+  height: 60px;
+  width: 60px;
+  background-color: #000;
+  border-radius: 0 18px 18px 0;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+@media (max-width: 880px) {
+  .search button {
+    height: 55px;
+    width: 55px;
+  }
+}
+
+.map {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 560px;
+  z-index: 10;
+}
+
+#mapid {
+  height: 300px;
+  width: 300px;
+}
+
+.textcontainer {
+  height: 60px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.result {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 110;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 160px;
+  width: auto;
+  max-width: 1110px;
+  margin: 40px auto;
+  background-color: #fff;
+  border-radius: 13px;
+}
+
+@media (max-width: 1110px) {
+  .result {
+    margin: 40px 20px;
+  }
+}
+
+@media (max-width: 880px) {
+  .result {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-width: 325px;
+    height: 294px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 40px auto;
+  }
+}
+
+.element {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.element p {
+  color: #2b2b2b;
+  font-weight: bold;
+  font-size: 1.5em;
+  text-align: left;
+  margin: 0 auto auto 32px;
+}
+
+@media (max-width: 1110px) {
+  .element p {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 880px) {
+  .element p {
+    font-size: 1em;
+    margin: 14px auto;
+    text-align: center;
+  }
+}
+
+.element h2 {
+  color: #969696;
+  font-size: 1em;
+  margin: 39px auto 1em 32px;
+  text-align: left;
+}
+
+@media (max-width: 1110px) {
+  .element h2 {
+    font-size: .8em;
+  }
+}
+
+@media (max-width: 880px) {
+  .element h2 {
+    font-size: .5em;
+    margin: 14px auto;
+    text-align: center;
+  }
+}
+
+.divisor {
+  height: 75px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background-color: #D8D8D8;
+  margin: 0 2px;
+}
+
+@media (max-width: 880px) {
+  .divisor {
+    display: none;
+  }
+}
+/*# sourceMappingURL=style.css.map */

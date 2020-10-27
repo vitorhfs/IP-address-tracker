@@ -1,0 +1,21 @@
+@import "variables";
+
+body {
+    text-align: center;
+    font-size: 400;
+    height: 100vh;
+    font-family:'Rubik', sans-serif;
+    color: #fff;
+    margin: 0;
+}
+
+.main-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+@import "header";
+@import "map";
+@import "result";

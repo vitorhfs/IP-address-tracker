@@ -1,0 +1,45 @@
+.search{
+    background: url('../images/pattern-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 280px;
+    z-index: 100;
+    box-shadow: 0px -15px 20px #C4C4C4;
+    h1 {
+        margin-top: 36px;
+        margin-bottom: 32px;
+        line-height: $font-size;
+    }
+    input {
+        width: 500px;
+        height: 100%;
+        border-radius: 18px 0 0 18px;
+        border: none;
+        padding: 0 25px;
+        @media (max-width: $mobile){
+            width: 220px;
+            height: 55px;
+        }
+        @media (max-width: 330px){
+            width: auto;
+            padding: 0 10px;
+        }
+    }
+    input::placeholder{
+        margin: auto;
+    }
+    button {
+        padding: 0;
+        border: none;
+        height: 60px;
+        width: 60px;
+        background-color: #000;
+        border-radius: 0 18px 18px 0;
+        align-self: flex-end;
+        @media (max-width: $mobile){
+            height: 55px;
+            width: 55px;
+        }
+    }
+}
