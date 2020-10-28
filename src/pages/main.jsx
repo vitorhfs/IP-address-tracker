@@ -20,20 +20,22 @@ const Main = () => {
     const regexIp = /\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b/gm;
     
     useEffect(() => {
-        api.get('')
+        async function fecthAPI (){
+            await api.get('')
             .then((res) => {
                 setAddress(res.data.ip);
             })
             .catch((err) => {
                 console.log(`maybe your IP is wrong, or the api crashed, who knows.`, err);
-        });
-
+            });
+        }
+        fecthAPI();
     }, []);
 
     useEffect(() => {
         
-        function fecthMyAPI() {            
-            axios.get(`${url}${address}${specs}`)
+        async function fecthMyAPI() {            
+            await axios.get(`${url}${address}${specs}`)
                 .then((res) => {
                     setIpAddress(res.data.query);
                     setLocation(`${res.data.city}, ${res.data.country}`);
