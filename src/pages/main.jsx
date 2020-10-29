@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Map, TileLayer, Marker } from 'react-leaflet';
 import axios from 'axios';
-import api from '../api/api';
 import mapIcon from '../components/mapIcon';
 
 const Main = () => {
@@ -20,42 +19,51 @@ const Main = () => {
     const regexIp = /\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b/gm;
     
     useEffect(() => {
-        async function fecthAPI (){
-            await api.get('')
-            .then((res) => {
-                setAddress(res.data.ip);
-            })
-            .catch((err) => {
-                console.log(`maybe your IP is wrong, or the api crashed, who knows.`, err);
-            });
+        const fetchInitialIP = async () => {
+            const initialResult = await axios(
+                'https://api.ipify.org?format=json'
+            );
+            setAddress(initialResult.data.ip);
         }
-        fecthAPI();
+
+        fetchInitialIP();
     }, []);
 
     useEffect(() => {
-        
-        async function fecthMyAPI() {            
-            await axios.get(`${url}${address}${specs}`)
-                .then((res) => {
-                    setIpAddress(res.data.query);
-                    setLocation(`${res.data.city}, ${res.data.country}`);
-                    setTimezone(res.data.timezone);
-                    setIsp(res.data.isp);
-                    setLat(res.data.lat);
-                    setLng(res.data.lon);
-                })
-                .catch((err) => {
-                    console.log(err);
-                })
-        };
-        
-        fecthMyAPI();        
+
+        const fetchAPI = async () => {
+            let result = await axios(
+                `${url}${address}${specs}`
+            );
+            
+            if (result.data.status === 'success' && address !== ''){
+                setIpAddress(result.data.query);
+                setLocation(`${result.data.city}, ${result.data.country}`);
+                setTimezone(result.data.timezone);
+                setIsp(result.data.isp);
+                setLat(result.data.lat);
+                setLng(result.data.lon);
+            } else if(result.data.status === 'fail'){
+                setIpAddress(`I DON'T EXIST`);
+                setLocation(`TRY`);
+                setTimezone(`SEARCHING`);
+                setIsp(`AGAIN`);
+            }
+        }
+                
+        fetchAPI();        
     }, [address]);
+
+    if(lat === undefined || lng === undefined){
+        setLat(-25.4872759);
+        setLng(-49.2942842);
+    }
 
     function handleSubmit(event){
         event.preventDefault();
-        input.match(regexIp) || input.match(regexUrl) 
-        ? setAddress(input)
+   
+        input.toLowerCase().match(regexUrl) || input.match(regexIp)
+        ? setAddress(input.toLowerCase())
         : alert('Maybe your search is wrong, try typing other addres/IP');
     }
 
