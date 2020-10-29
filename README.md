@@ -29,6 +29,6 @@ You can see the challenge here: https://www.frontendmentor.io/challenges/ip-addr
 
 This website shows you the exact location of your server and your IP address the moment you access it, the search will respond you with the same informations of any existent IP address or domain name, if your search is wrong the page will send you an alert.
 
-The [IPify API](https://www.ipify.org/) serve us with our own IP address that starts the page, while the [IP API](http://ip-api.com) takes care of the searched IP. I've tried to use the first API to both solutions, but it's a paid API for this service and apparentelly it doesn't refresh your request after some consecutive tries, so to avoid this problem I've opted for IP API to do this job.
+The [IPify API](https://www.ipify.org/) serves us with our own IP address that autocomplete with the loaded page and also takes care of the searched IP. This operation was made using useEffect hook to re-render everytime our api object is overwritten.
 
-I hope you liked my project and let me know if I miss some point or have something to improve inside it. :)
+I hope you liked my project and let me know if I miss some point or if you have some ideia to improve this page. :)
